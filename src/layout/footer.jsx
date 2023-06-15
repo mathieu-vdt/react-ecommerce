@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pied = () => {
+const Footer = () => {
     return (
         <footer>
             Design By JdeDev
@@ -8,4 +8,4 @@ const Pied = () => {
     );
 }
 
-export default Pied;
+export default Footer;

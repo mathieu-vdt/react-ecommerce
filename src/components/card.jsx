@@ -1,13 +1,19 @@
 import React from 'react';
 
-const Card = ({ titre, content, link }) => {
+const Card = ({ titre, price, link }) => {
     return (
-        <article className="card">
-            <h3>{titre}</h3>
-            <p>{content}</p>
-            <a href={link}>Voir détail</a><br />
-            <p></p>
-        </article>
+        <div className="item">
+                <img src="/src/assets/images/shoes/shirt.png" alt="" />
+                <div className="titlePrice">
+                    <p className="title">{titre}</p>
+                    <p className="price">{price} €</p>
+                </div>
+                
+                <div className="group-btn">
+                    <a href={link}>Détails</a>
+                    <a><i className="fa-sharp fa-solid fa-basket-shopping"></i></a>
+                </div>
+        </div>       
     );
 }
 

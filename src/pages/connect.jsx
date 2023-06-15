@@ -1,13 +1,11 @@
 import React from 'react';
-import ContainerFlex from '../layout/containerFlex';
+import ContainerGrid from '../layout/ContainerGrid';
 import ConnectForm from '../components/connectForm';
 
 const Connect = () => {
     return (
         <div>
-            <ContainerFlex>
-                <ConnectForm />
-            </ContainerFlex>
+            <ConnectForm />
         </div>
     );
 }

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../components/card';
-import ContainerFlex from '../layout/containerFlex';
+import ContainerGrid from '../layout/ContainerGrid';
 import { getAllProduct } from '../api/produit';
+import HeroHeader from '../layout/hero-header'
+import Brands from '../layout/brands'
 
 const Home = () => {
     // const articles = [
@@ -17,9 +19,11 @@ const Home = () => {
     
     return (
         <div>
-            <ContainerFlex>
-                {articles.map((elem, key) => <Card key={key} titre={elem.nom} content={elem.description} link={`/product/${elem.id}`}/>)}
-            </ContainerFlex>
+            <HeroHeader />
+            <Brands />
+            <ContainerGrid>
+                {articles.map((elem, key) => <Card key={key} titre={elem.nom} price={elem.prix} link={`/product/${elem.id}`}/>)}
+            </ContainerGrid>
         </div>
     );
 }

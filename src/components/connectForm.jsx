@@ -23,13 +23,16 @@ function ConnectForm() {
 
     getUserLogin(formData)
       .then(data => {
+        
         // Traitez les données de connexion utilisateur ici
         switch(data.mess){
             case 'utilisateur connecté':
-                console.log('Connecté')
+                // Stockage du token JWT dans le stockage local
+                localStorage.setItem('jwtToken', data.token);
+                window.location.replace('/');
                 break;
             default:
-                console.log('Erreur de connexion');
+                alert('Erreur de connexion')
                 break;
         }
       })
