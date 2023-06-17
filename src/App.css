@@ -71,7 +71,7 @@ nav .logo a:hover{
 }
 
 nav ul li{
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 nav ul li a{
@@ -124,6 +124,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 20px 0;
   }
 
   .title-grid a{
@@ -266,66 +267,38 @@ footer{
       
 }
 
-/* Orders */
 
-.orderList{
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  
-  padding: 20px;
-
+/* Product Detail */
+.productDetail{
   color: #363636;
-}
-
-.itemOrder{
-  display: flex;
-  width: 700px;
+  width: 60%;
+  padding: 20px;
   background-color: white;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.2);
+  margin: auto;
 }
 
-@media screen and (max-width: 750px) {
-  .itemOrder{
-    width: 100%;
-  }
-  
+.productDetail .grid{
+  display: grid;
+  height: 500px;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
 }
 
-.itemOrder .order-card{
-  width: 100%;
-}
-
-
-.itemOrder .tableOrder{
-  width: 100%;
-  text-align: center;
-}
-
-.itemOrder .tableOrder tr{
+.productDetail .grid .grid-item img{
   padding: 30px;
-}
-
-.itemOrder .tableOrder thead{
-  background-color: #36363612;
-}
-
-.itemOrder .tableOrder tbody tr{
-  border: solid 1px black;
-}
-
-.itemOrder .order-card-header{
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  height: 450px;
+  object-fit: contain;
+  background-color: whitesmoke;
 }
 
-.itemOrder .order-card-header{
-  color: #3636367b;
-  font-size: 0.7em;
+.productDetail .grid .grid-item{
+  padding: 20px;
 }
+
+.productDetail .grid .grid-item .descriptionDetail{
+  color: #36363674;
+}
+
+
+
+

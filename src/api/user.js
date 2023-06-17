@@ -13,6 +13,19 @@ export async function getUserLogin(formData) {
   
     return Promise.resolve(data);
 }
+export async function getUserSignUp(formData) {
+    const response = await fetch('http://localhost:3000/api/user/inscription', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        Authorization: `Bearer ${token}`,
+        body: JSON.stringify(formData)
+      });
+    const data = await response.json();
+  
+    return Promise.resolve(data);
+}
 
 
 export async function getUserByToken() {

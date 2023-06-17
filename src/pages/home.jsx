@@ -22,7 +22,7 @@ const Home = () => {
             <HeroHeader />
             <Brands />
             <ContainerGrid>
-                {articles.map((elem, key) => <Card key={key} titre={elem.nom} price={elem.prix} link={`/product/${elem.id}`}/>)}
+                {articles.map((elem, key) => <Card key={key} id={elem.id} titre={elem.nom} price={elem.prix} link={`/product/${elem.id}`}/>)}
             </ContainerGrid>
         </div>
     );

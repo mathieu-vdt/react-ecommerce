@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { getUserLogin } from '../api/user';
-import { Link } from 'react-router-dom';
+import { getUserSignUp } from '../api/user';
 
-function ConnectForm() {
+function SignUpForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,23 +21,13 @@ function ConnectForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    getUserLogin(formData)
+    getUserSignUp(formData)
       .then(data => {
         
-        // Traitez les données de connexion utilisateur ici
-        switch(data.mess){
-            case 'utilisateur connecté':
-                // Stockage du token JWT dans le stockage local
-                localStorage.setItem('jwtToken', data.token);
-                window.location.replace('/');
-                break;
-            default:
-                alert('Erreur de connexion')
-                break;
-        }
+        alert('Utilisateur créer')
       })
       .catch(error => {
-        console.error('Erreur lors de la connexion', error);
+        console.error('Erreur lors de l\'inscription', error);
       });
   };
 
@@ -46,7 +35,7 @@ function ConnectForm() {
 
   return (
     <div>
-      <h2>Connexion</h2>
+      <h2>Inscription</h2>
       <form onSubmit={handleSubmit} method='POST'>
         <div>
           <label htmlFor="username">Nom d'utilisateur:</label>
@@ -68,15 +57,10 @@ function ConnectForm() {
             onChange={handlePasswordChange}
           />
         </div>
-        <div className="form-grid">
-          <Link to="/inscription">Pas encore inscrit ?</Link>
-          <button type="submit">Se connecter</button>
-        </div>
+        <button type="submit">Se connecter</button>
       </form>
-
-      
     </div>
   );
 }
 
-export default ConnectForm;
+export default SignUpForm;

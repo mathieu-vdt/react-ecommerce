@@ -1,0 +1,138 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    transform: translateX(-140px);
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border-radius: 4px;
+    border: solid 0.5px #363636;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+  }
+  
+
+  /* FORMULAIRE */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+  }
+  
+  form input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  
+    border: 0;
+    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+  
+    margin-bottom: 10px;
+  
+    box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  form button[type=submit]{
+    width: 40%;
+    padding: 10px;
+  
+    margin: auto;
+    outline: none;
+    border: 0;
+    border-radius: 8px;
+    background-color: #2a9692;
+  
+    color: whitesmoke;
+  }
+  
+  .form-grid{
+    display: flex;
+  
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  
+  }
+  
+
+  /* Orders */
+
+.orderList{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 20px;
+  
+    color: #363636;
+  }
+  
+  .itemOrder{
+    display: flex;
+    width: 700px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media screen and (max-width: 750px) {
+    .itemOrder{
+      width: 100%;
+    }
+    
+  }
+  
+  .itemOrder .order-card{
+    width: 100%;
+  }
+  
+  
+  .itemOrder .tableOrder{
+    width: 100%;
+    text-align: center;
+  }
+  
+  .itemOrder .tableOrder tr{
+    padding: 30px;
+  }
+  
+  .itemOrder .tableOrder thead{
+    background-color: #36363612;
+  }
+  
+  .itemOrder .tableOrder tbody tr{
+    border: solid 1px black;
+  }
+  
+  .itemOrder .order-card-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .itemOrder .order-card-header{
+    color: #3636367b;
+    font-size: 0.7em;
+  }
+  

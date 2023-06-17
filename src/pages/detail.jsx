@@ -21,11 +21,27 @@ function ProductDetail() {
   }
 
   return (
-    <div>
-      <h2>Détails du produit {id}</h2>
-      <h3>{product.nom}</h3>
-      <p>{product.description}</p>
-      <p>{product.prix}</p>
+    <div className='productDetail'>
+      <div className="grid">
+        <div className="grid-item">
+          <img src="/src/assets/images/shoes/shirt.png" alt="" />
+        </div>
+        <div className="grid-item">
+          <h3>{product.nom}</h3>
+          <hr />
+          <p className='descriptionDetail'>{product.description}</p>
+          <hr />
+          <p>Prix : {product.prix} €</p>
+          <div className="group-btn">
+            <a href='#'>Commander</a>
+            <a><i className="fa-sharp fa-solid fa-basket-shopping"></i></a>
+          </div>
+        </div>
+        <hr />
+        <div className="notice">
+          
+        </div>
+      </div>
       {/* ... */}
     </div>
   );
