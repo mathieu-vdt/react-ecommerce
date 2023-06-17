@@ -31,13 +31,19 @@ function CartList() {
   return (
     <div className='cartList'>
       <h2>Panier</h2>
-      {isLoggedIn ? (
-        items.map((elem, key) => (
-          <CardCart key={key} id={elem.id} titre={elem.nom} price={elem.prix} quantity={elem.quantity} />
-        ))
-      ) : (
-        <p>Vous devez vous connecter</p>
-      )}
+      <div className="cart-list-items">
+        {isLoggedIn ? (
+          items.map((elem, key) => (
+            <CardCart key={key} id={elem.id} titre={elem.nom} price={elem.prix} quantity={elem.quantity} />
+          ))
+        ) : (
+          <p>Vous devez vous connecter</p>
+        )}
+      </div>
+          <br />
+      <div className="center">
+        <button className='orderBtn'>Commander</button>
+      </div>
     </div>
   );
 }

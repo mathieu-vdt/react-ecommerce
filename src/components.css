@@ -1,6 +1,7 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    color: #363636;
   }
   
   .dropdown-content {
@@ -136,3 +137,32 @@ form {
     font-size: 0.7em;
   }
   
+
+  /* CART */
+  .cart-number{
+    position: absolute;
+    transform: translateY(-19px) translateX(19px);
+    background-color: #2a9692;
+    padding: 1px 5px;
+    border-radius: 60px;
+  }
+
+
+  
+.orderBtn{
+  padding: 8px;
+  outline: none;
+  border: solid 0.5px #363636;
+  border-radius: 8px;
+  color: #363636;
+  background-color: whitesmoke;
+  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.2);
+}
+
+.orderBtn:hover{
+  border: solid 0.5px #363636;
+  border-radius: 8px;
+  color: whitesmoke;
+  background-color: #363636;
+  transition: all 0.3s ease;
+}

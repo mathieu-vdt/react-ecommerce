@@ -12,13 +12,17 @@ blue #5289aa
 gold #e9ca80 
 */
 
-html {height:100%} 
 
 body{
     margin: 0;
     padding: 0;
     background-color: whitesmoke;
-    min-height:100%
+
+}
+
+#app{
+  display: block;
+  height:100vh;
 }
 
 body::-webkit-scrollbar-track
@@ -41,6 +45,11 @@ body::-webkit-scrollbar-thumb
 	background-color: #363636;
 }
 
+.center{
+  display: flex;
+  margin: auto;
+  justify-content: center
+}
 
 /* START NAV */
 nav{
@@ -244,7 +253,7 @@ footer{
 /* Au niveau le plus haut du code */
 @media screen and (max-width: 515px) {
     .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(1, minmax(100%, 1fr));
         padding: 10px 50px;
         /* repeat = as many times as you can fit */
         /* auto-fit = fit as many items on the line as possible, go bigger if you need to */
@@ -253,11 +262,11 @@ footer{
       }
 
       .item {
-        height: 150px;
+        height: 100%;
       }
 
       .item p{
-        padding: 48px 0;
+        padding: 0;
       }
 
       .brands-list img{
@@ -301,4 +310,38 @@ footer{
 
 
 
+/* Cart container */
 
+.cartList{
+  padding: 30px;
+  min-height: 100%;
+}
+.cart-list-items{
+  display: flex;
+  flex-direction: column;
+}
+
+.itemCart{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  border-bottom: solid 1px #363636;
+
+  margin: 10px 0;
+}
+
+.cart-image-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+}
+
+.cart-image-item img{
+  width: 90px;
+  height: 90px;
+  background-color: whitesmoke;
+  object-fit: cover;
+}
