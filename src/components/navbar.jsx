@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getUserByToken } from '../api/user';
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [role, setRole] = useState('Membre');;
 
   const handleLogout = () => {
     // Gérer la déconnexion de l'utilisateur
@@ -13,9 +15,17 @@ const Navbar = () => {
   
   // Vérifier la connexion lors du chargement initial de la page
   useEffect(() => {
-    const jwtToken = localStorage.getItem('jwtToken');
-    const loggedIn = !!jwtToken;
-    setIsLoggedIn(loggedIn);
+    const checkUserToken = async () => {
+      const jwtToken = localStorage.getItem('jwtToken');
+      const loggedIn = !!jwtToken;
+      setIsLoggedIn(loggedIn);
+      
+      const UserByToken = await getUserByToken();
+      setRole(UserByToken.role);
+      
+      
+    };
+    checkUserToken();
 
   }, []);
 
@@ -31,6 +41,8 @@ const Navbar = () => {
               <div className="dropdown">
                 <span><i className="fa-solid fa-user"></i></span>
                 <div className="dropdown-content">
+                  {role === 'Admin' ? <Link to="/dashboard"><i className="fa-sharp fa-solid fa-chart-line"></i>  Dashboard</Link> : ''}
+                  <Link to="/my-account">Mon compte</Link>
                   <Link to="/order"><i className="fa-solid fa-clipboard-list"></i>  Commandes</Link>
                   <Link onClick={handleLogout}><i className="fa-sharp fa-solid fa-right-from-bracket"></i>  Déconnexion</Link>
                 </div>

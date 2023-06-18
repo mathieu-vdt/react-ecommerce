@@ -345,3 +345,34 @@ footer{
   background-color: whitesmoke;
   object-fit: cover;
 }
+
+
+/* Dashboard */
+.dashboard{
+  padding: 30px;
+
+}
+
+.dashboard .btn-list{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.dashboard .btn-list a{
+  text-decoration: none;
+  color: #363636;
+  border: solid 0.5px #363636;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.dashboard .btn-list a:hover{
+  color: whitesmoke;
+  background-color: #363636;
+  transition: all 0.3s ease;
+}

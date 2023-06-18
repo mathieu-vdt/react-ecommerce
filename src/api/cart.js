@@ -4,7 +4,7 @@ const token = localStorage.getItem('jwtToken');
 let userId;
 if(token){
     const UserByToken = getUserByToken();
-    UserByToken.then(result => {
+    await UserByToken.then(result => {
         // Access the result here
         userId = result.id
     
@@ -45,6 +45,26 @@ export async function addCartItem(product_id, quantity) {
             'cart_id': cart_id,
             'product_id': product_id,
             'quantity': quantity
+        })
+      });
+    const data = await response.json();
+    
+    return Promise.resolve(data);
+    
+}
+
+
+export async function removeCartItem(cart_id, product_id) {
+    
+    const response = await fetch(`http://localhost:3000/api/cart/remove_item`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        Authorization: `Bearer ${token}`,
+        body: JSON.stringify({
+            'cart_id': cart_id,
+            'product_id': product_id,
         })
       });
     const data = await response.json();

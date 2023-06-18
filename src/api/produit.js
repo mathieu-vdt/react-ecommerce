@@ -1,5 +1,6 @@
 import { getUserByToken } from '../api/user';
 
+
 const token = localStorage.getItem('jwtToken');
 let userId;
 if(token){

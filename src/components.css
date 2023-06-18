@@ -82,6 +82,8 @@ form {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    row-gap: 20px;
+    
     
     padding: 20px;
   
@@ -148,7 +150,7 @@ form {
   }
 
 
-  
+
 .orderBtn{
   padding: 8px;
   outline: none;
@@ -165,4 +167,32 @@ form {
   color: whitesmoke;
   background-color: #363636;
   transition: all 0.3s ease;
+}
+
+
+.deleteItemCart{
+  padding: 8px;
+  outline: none;
+  border: solid 0.5px rgb(162, 41, 41);
+  border-radius: 8px;
+  color: rgb(162, 41, 41);
+  margin: 10px 0;
+}
+
+
+.deleteItemCart:hover{
+  padding: 8px;
+  outline: none;
+  border: solid 0.5px whitesmoke;
+  border-radius: 8px;
+  color: whitesmoke;
+  background-color: rgb(162, 41, 41);
+  transition: all 0.3s ease;
+}
+
+.status{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8em;
+  color: #3636368e;
 }

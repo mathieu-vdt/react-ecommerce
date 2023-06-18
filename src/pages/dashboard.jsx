@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOrderByUser } from '../api/order';
+import NavButtons from '../components/dashboard/navbtn'
 import OrderCard from '../components/cardOrder';
 
 
-function OrderList() {
+function Dashboard() {
   const [orders, setOrders] = useState([]); // État pour stocker les commandes récupérées
 
   useEffect(() => {
@@ -18,11 +19,11 @@ function OrderList() {
   }, []);
 
   return (
-    <div className='orderList'>
-      <h2>Liste des commandes :</h2>
-      {orders.map((elem, key) => <OrderCard key={key} order_id={elem.commande_id} date={elem.date} status={elem.status} products={elem.produits}/>)}
+    <div className='dashboard'>
+      <h2>Tableau de bord</h2>
+      <NavButtons />
     </div>
   );
 }
 
-export default OrderList;
+export default Dashboard;

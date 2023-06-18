@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 
-const OrderCard = ({ order_id, date, products }) => {
+const OrderCard = ({ order_id, date,status, products }) => {
     return (
         <div className="itemOrder">
             <div className='order-card'>
@@ -11,7 +11,7 @@ const OrderCard = ({ order_id, date, products }) => {
                     <p className='date'>Le {moment(date).format('DD/MM/YYYY')} à {moment(date).format('hh:mm')}</p>
                 </div>
                 <div className='order-card-body'>
-                    <table className='tableOrder' cellspacing="0">
+                    <table className='tableOrder' cellSpacing="0">
                         <thead>
                             <tr>
                                 <th>Nom</th>
@@ -21,7 +21,7 @@ const OrderCard = ({ order_id, date, products }) => {
                         </thead>
                         <tbody>
                             {products.map(product => (
-                                <tr>
+                                <tr id={product.is}>
                                     <td>{product.nom}</td>
                                     <td>{product.prix} €</td>
                                     <td>{product.quantity}</td>
@@ -30,6 +30,7 @@ const OrderCard = ({ order_id, date, products }) => {
                         </tbody>
                     
                     </table>
+                    <p className='status'>Statut: {status}</p>
                 </div>
             </div>
         </div>       
